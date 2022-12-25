@@ -2,7 +2,7 @@
 import { ref, reactive } from "vue";
 import QrcodeVue from "qrcode.vue";
 
-let value = ref("hr://somedata.lambda");
+let value = ref("hr://defaultdata.random");
 let size = ref(100);
 
 function upsize() {
@@ -10,7 +10,8 @@ function upsize() {
 }
 
 function random() {
-  value.value = "https://google.com";
+  const result = Math.random().toString(36);
+  value.value = "hr://" + result;
 }
 </script>
 
